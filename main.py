@@ -56,13 +56,13 @@ df['gender'] = np.where(df['gender'] > 1, 0, 1)
 target = df.columns[-1]
 
 #Gender
-#print(f"\nDistribution of Gender by CVD:")
-#print(df.groupby(target)['gender'].value_counts())
+print(f"\nDistribution of Gender by CVD:")
+print(df.groupby(target)['gender'].value_counts())
 
 percantageOfSickWoman = round(len(df[(df['gender'] == 1) & (df[target] == 1)]) / len(df[(df['gender'] == 1)])*100, 2)
 percantageOfSickMan = round(len(df[(df['gender'] == 0) & (df[target] == 1)]) / len(df[(df['gender'] == 0)])*100, 2)
 
-#print(f"Sick Woman : {percantageOfSickWoman}%, sick man: {percantageOfSickMan}%")
+print(f"Sick Woman : {percantageOfSickWoman}%, sick man: {percantageOfSickMan}%")
 
 df['cvdPredByGender'] = np.where(df['gender'] < 1, 1, 0)
 
@@ -70,13 +70,13 @@ genderAccuracy = round((len(df[(df['cvdPredByGender'] == 1) & (df[target] == 1)]
 print(f"Gender prediction accuracy: {genderAccuracy}%.")
 
 #Age
-#print(f"\nDistribution of Age by CVD:")
-#print(df.groupby(target)['age'].value_counts())
+print(f"\nDistribution of Age by CVD:")
+print(df.groupby(target)['age'].value_counts())
 
 percantageOfSickOlder = round(len(df[(df['age'] == 1) & (df[target] == 1)]) / len(df[(df['age'] == 1)])*100, 2)
 percantageOfSickYounger = round(len(df[(df['age'] == 0) & (df[target] == 1)]) / len(df[(df['age'] == 0)])*100, 2)
 
-#print(f"Sick older : {percantageOfSickOlder}%, sick younger: {percantageOfSickYounger}%")
+print(f"Sick older : {percantageOfSickOlder}%, sick younger: {percantageOfSickYounger}%")
 
 df['cvdPredByAge'] = np.where(df['age'] >= 1, 1, 0)
 
@@ -84,13 +84,13 @@ ageAccuracy = round((len(df[(df['cvdPredByAge'] == 1) & (df[target] == 1)]) + le
 print(f"Age prediction accuracy: {ageAccuracy}%.")
 
 #SBP
-#print(f"\nDistribution of SBP by CVD:")
-#print(df.groupby(target)['ap_hi'].value_counts())
+print(f"\nDistribution of SBP by CVD:")
+print(df.groupby(target)['ap_hi'].value_counts())
 
 percantageOfSickAphiAbove = round(len(df[(df['ap_hi'] == 1) & (df[target] == 1)]) / len(df[(df['ap_hi'] == 1)])*100, 2)
 percantageOfSickAphiNormal = round(len(df[(df['ap_hi'] == 0) & (df[target] == 1)]) / len(df[(df['ap_hi'] == 0)])*100, 2)
 
-#print(f"Sick above : {percantageOfSickAphiAbove}%, sick normal: {percantageOfSickAphiNormal}%")
+print(f"Sick above : {percantageOfSickAphiAbove}%, sick normal: {percantageOfSickAphiNormal}%")
 
 df['cvdPredByAphi'] = np.where(df['ap_hi'] >= 1, 1, 0)
 
@@ -98,13 +98,13 @@ aphiAccuracy = round((len(df[(df['cvdPredByAphi'] == 1) & (df[target] == 1)]) + 
 print(f"SBP prediction accuracy: {aphiAccuracy}%.")
 
 #DBP
-#print(f"\nDistribution of DBP by CVD:")
-#print(df.groupby(target)['ap_lo'].value_counts())
+print(f"\nDistribution of DBP by CVD:")
+print(df.groupby(target)['ap_lo'].value_counts())
 
 percantageOfSickAploAbove = round(len(df[(df['ap_lo'] == 1) & (df[target] == 1)]) / len(df[(df['ap_lo'] == 1)])*100, 2)
 percantageOfSickAploNormal = round(len(df[(df['ap_lo'] == 0) & (df[target] == 1)]) / len(df[(df['ap_lo'] == 0)])*100, 2)
 
-#print(f"Sick above : {percantageOfSickAploAbove}%, sick normal: {percantageOfSickAploNormal}%")
+print(f"Sick above : {percantageOfSickAploAbove}%, sick normal: {percantageOfSickAploNormal}%")
 
 df['cvdPredByAplo'] = np.where(df['ap_lo'] >= 1, 1, 0)
 
@@ -112,13 +112,13 @@ aploAccuracy = round((len(df[(df['cvdPredByAplo'] == 1) & (df[target] == 1)]) + 
 print(f"DBP prediction accuracy: {aploAccuracy}%.")
 
 #Cholesterol
-#print(f"\nDistribution of Cholesterol by CVD:")
-#print(df.groupby(target)['cholesterol'].value_counts())
+print(f"\nDistribution of Cholesterol by CVD:")
+print(df.groupby(target)['cholesterol'].value_counts())
 
 percantageOfSickCholAbove = round(len(df[(df['cholesterol'] == 1) & (df[target] == 1)]) / len(df[(df['cholesterol'] == 1)])*100, 2)
 percantageOfSickCholNormal = round(len(df[(df['cholesterol'] == 0) & (df[target] == 1)]) / len(df[(df['cholesterol'] == 0)])*100, 2)
 
-#print(f"Sick above : {percantageOfSickCholAbove}%, sick normal: {percantageOfSickCholNormal}%")
+print(f"Sick above : {percantageOfSickCholAbove}%, sick normal: {percantageOfSickCholNormal}%")
 
 df['cvdPredByChol'] = np.where(df['cholesterol'] >= 1, 1, 0)
 
@@ -126,13 +126,13 @@ cholAccuracy = round((len(df[(df['cvdPredByChol'] == 1) & (df[target] == 1)]) + 
 print(f"Cholesterol prediction accuracy: {cholAccuracy}%.")
 
 #Glucose
-#print(f"\nDistribution of Glucose by CVD:")
-#print(df.groupby(target)['gluc'].value_counts())
+print(f"\nDistribution of Glucose by CVD:")
+print(df.groupby(target)['gluc'].value_counts())
 
 percantageOfSickGlucAbove = round(len(df[(df['gluc'] == 1) & (df[target] == 1)]) / len(df[(df['gluc'] == 1)])*100, 2)
 percantageOfSickGlucNormal = round(len(df[(df['gluc'] == 0) & (df[target] == 1)]) / len(df[(df['gluc'] == 0)])*100, 2)
 
-#print(f"Sick above : {percantageOfSickGlucAbove}%, sick normal: {percantageOfSickGlucNormal}%")
+print(f"Sick above : {percantageOfSickGlucAbove}%, sick normal: {percantageOfSickGlucNormal}%")
 
 df['cvdPredByGluc'] = np.where(df['gluc'] >= 1, 1, 0)
 
@@ -140,13 +140,13 @@ glucAccuracy = round((len(df[(df['cvdPredByGluc'] == 1) & (df[target] == 1)]) + 
 print(f"Glucose prediction accuracy: {glucAccuracy}%.")
 
 #Smoking
-#print(f"\nDistribution of Smoking by CVD:")
-#print(df.groupby(target)['smoke'].value_counts())
+print(f"\nDistribution of Smoking by CVD:")
+print(df.groupby(target)['smoke'].value_counts())
 
 percantageOfSickSmoking = round(len(df[(df['smoke'] == 1) & (df[target] == 1)]) / len(df[(df['smoke'] == 1)])*100, 2)
 percantageOfSickNonSmoking = round(len(df[(df['smoke'] == 0) & (df[target] == 1)]) / len(df[(df['smoke'] == 0)])*100, 2)
 
-#print(f"Sick Smoking : {percantageOfSickSmoking}%, sick not smoking: {percantageOfSickNonSmoking}%")
+print(f"Sick Smoking : {percantageOfSickSmoking}%, sick not smoking: {percantageOfSickNonSmoking}%")
 
 df['cvdPredBySmoke'] = np.where(df['smoke'] < 1, 1, 0)
 
@@ -154,13 +154,13 @@ smokeAccuracy = round((len(df[(df['cvdPredBySmoke'] == 1) & (df[target] == 1)]) 
 print(f"Smoking prediction accuracy: {smokeAccuracy}%.")
 
 #Alcohol
-#print(f"\nDistribution of Alcohol by CVD:")
-#print(df.groupby(target)['alco'].value_counts())
+print(f"\nDistribution of Alcohol by CVD:")
+print(df.groupby(target)['alco'].value_counts())
 
 percantageOfSickDrinking = round(len(df[(df['alco'] == 1) & (df[target] == 1)]) / len(df[(df['alco'] == 1)])*100, 2)
 percantageOfSickNonDrinking = round(len(df[(df['alco'] == 0) & (df[target] == 1)]) / len(df[(df['alco'] == 0)])*100, 2)
 
-#print(f"Sick Drinking : {percantageOfSickDrinking}%, sick not drinking: {percantageOfSickNonDrinking}%")
+print(f"Sick Drinking : {percantageOfSickDrinking}%, sick not drinking: {percantageOfSickNonDrinking}%")
 
 df['cvdPredByAlco'] = np.where(df['alco'] < 1, 1, 0)
 
@@ -168,13 +168,13 @@ alcoAccuracy = round((len(df[(df['cvdPredByAlco'] == 1) & (df[target] == 1)]) + 
 print(f"Drinking prediction accuracy: {alcoAccuracy}%.")
 
 #Physical Activity
-#print(f"\nDistribution of Physical activity by CVD:")
-#print(df.groupby(target)['active'].value_counts())
+print(f"\nDistribution of Physical activity by CVD:")
+print(df.groupby(target)['active'].value_counts())
 
 percantageOfSickActive = round(len(df[(df['active'] == 1) & (df[target] == 1)]) / len(df[(df['active'] == 1)])*100, 2)
 percantageOfSickNonActive = round(len(df[(df['active'] == 0) & (df[target] == 1)]) / len(df[(df['active'] == 0)])*100, 2)
 
-#print(f"Sick active : {percantageOfSickActive}%, sick not active: {percantageOfSickNonActive}%")
+print(f"Sick active : {percantageOfSickActive}%, sick not active: {percantageOfSickNonActive}%")
 
 df['cvdPredByActive'] = np.where(df['active'] < 1, 1, 0)
 

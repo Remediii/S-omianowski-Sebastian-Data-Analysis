@@ -22,9 +22,9 @@ y_pred = clf.predict(X_test)
 print(accuracy_score(y_test, y_pred))
 print(classification_report(y_test, y_pred))
 
-export_graphviz(clf, out_file='tree.dot', feature_names=X.columns, class_names=['0', '1'], filled=True)
-graph = pydotplus.graph_from_dot_file('tree.dot')
-graph.write_png('tree.png')
+export_graphviz(clf, out_file='sk_tree.dot', feature_names=X.columns, class_names=['0', '1'], filled=True)
+graph = pydotplus.graph_from_dot_file('sk_tree.dot')
+graph.write_png('sk_tree.png')
 
 fig = plt.figure(figsize=(15, 10))
 _ = plot_tree(clf, filled=True)
