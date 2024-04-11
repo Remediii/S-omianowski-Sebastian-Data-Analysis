@@ -16,7 +16,7 @@ y = df.iloc[:, 11]
 
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=43)
-clf = DecisionTreeClassifier(max_depth=5)
+clf = DecisionTreeClassifier(max_depth=3)
 clf.fit(X_train, y_train)
 
 y_pred = clf.predict(X_test)
